@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend
+spec:
+  selector:
+    matchLabels:
+      service: frontend
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        service: frontend
+    spec:
+      containers:
+        - name: frontend
+          image: trannhatquang2405/udagram-frontend:v1
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
+          resources:
+            limits:
+              cpu: 500m
+            requests:
+              cpu: 250m
