@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-feed
+spec:
+  selector:
+    matchLabels:
+      service: backend-feed
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        service: backend-feed
+    spec:
+      containers:
+        - name: backend-feed
+          image: trannhatquang2405/udagram-api-feed:v13
+          resources:
+            limits:
+              cpu: 800m
+            requests:
+              cpu: 500m

@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: ConfigMap
+data:
+  AWS_BUCKET: quangtn14-project3
+  AWS_PROFILE: default
+  AWS_REGION: us-east-1
+  JWT_SECRET: test
+  POSTGRES_DB: quangtn14
+  POSTGRES_HOST: quangtn14.crro5wvz8xaa.us-east-1.rds.amazonaws.com
+  URL: http://localhost:8080
+  NODE_OPTIONS: --max-old-space-size=1024
+metadata:
+  name: env-config
